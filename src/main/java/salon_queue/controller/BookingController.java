@@ -33,6 +33,12 @@ public class BookingController {
         return bookingRepository.findBySalonId(salonId);
     }
 
+    // Customer ke phone number se bookings dekho
+    @GetMapping("/customer/{phone}")
+    public List<Booking> getCustomerBookings(@PathVariable String phone) {
+        return bookingRepository.findByCustomerPhoneOrderByBookingTimeDesc(phone);
+    }
+
     // Sirf queue mein kitne hain
     @GetMapping("/salon/{salonId}/queue")
     public Map<String, Object> getQueueInfo(@PathVariable Long salonId) {

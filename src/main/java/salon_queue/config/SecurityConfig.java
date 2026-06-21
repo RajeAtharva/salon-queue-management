@@ -37,6 +37,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PATCH, "/api/bookings/*/status").hasRole("OWNER")
                         .requestMatchers(HttpMethod.GET, "/api/salons/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/barbers/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/bookings/customer/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/bookings/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/bookings/**").permitAll()
                         .anyRequest().authenticated()
