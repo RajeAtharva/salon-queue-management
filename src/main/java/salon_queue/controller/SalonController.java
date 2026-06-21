@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import salon_queue.model.Salon;
 import salon_queue.repository.SalonRepository;
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/salons")
 public class SalonController {
